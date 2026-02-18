@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0f;
+  --foreground: #e5e5e5;
+  --card: #111118;
+  --card-foreground: #e5e5e5;
+  --border: #1e1e2e;
+  --primary: #6366f1;
+  --primary-foreground: #ffffff;
+  --muted: #1e1e2e;
+  --muted-foreground: #a1a1aa;
+  --accent: #6366f1;
+  --destructive: #ef4444;
+
+  /* Occupancy colors */
+  --occupancy-empty: #22c55e;
+  --occupancy-low: #84cc16;
+  --occupancy-medium: #eab308;
+  --occupancy-high: #f97316;
+  --occupancy-full: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Three.js canvas container */
+.canvas-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.canvas-container canvas {
+  outline: none;
+}

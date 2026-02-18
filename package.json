@@ -1,0 +1,36 @@
+{
+  "name": "epibat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EpiBat - Real-time building tracking & monitoring for Epitech campus",
+  "packageManager": "pnpm@10.29.2",
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:web": "turbo dev --filter=@epibat/web",
+    "dev:server": "turbo dev --filter=@epibat/server",
+    "build": "turbo build",
+    "build:web": "turbo build --filter=@epibat/web",
+    "build:server": "turbo build --filter=@epibat/server",
+    "lint": "turbo lint",
+    "db:generate": "turbo db:generate --filter=@epibat/server",
+    "db:push": "turbo db:push --filter=@epibat/server",
+    "db:migrate": "turbo db:migrate --filter=@epibat/server",
+    "db:seed": "turbo db:seed --filter=@epibat/server"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.6",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma",
+      "sharp"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.next/
+.env
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+.DS_Store
+*.tsbuildinfo
+coverage/
+.turbo/
+prisma/*.db
+uploads/
+
+header

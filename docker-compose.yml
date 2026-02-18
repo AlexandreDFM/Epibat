@@ -1,0 +1,114 @@
+##############################################################################
+# EpiBat — Docker Compose
+#
+# The network scanner uses ARP / ping / traceroute and MUST see the real LAN.
+# On macOS / Windows, Docker containers run inside a Linux VM, so
+# "network_mode: host" does NOT expose the host's physical network.
+#
+# ┌──────────────────────────────────────────────────────────────────────────┐
+# │  RECOMMENDED USAGE                                                      │
+# │                                                                         │
+# │  1. Start infra only (works everywhere — recommended on macOS):         │
+# │       docker compose up -d                                              │
+# │       pnpm dev:server          ← runs natively, full LAN access         │
+# │       pnpm dev:web                                                      │
+# │                                                                         │
+# │  2. Full stack on LINUX (host networking works natively):               │
+# │       docker compose --profile fullstack up -d                          │
+# │                                                                         │
+# │  3. Full stack WITHOUT scanning (macOS / CI / demo):                    │
+# │       SCAN_ENABLED=false docker compose --profile fullstack up -d       │
+# └──────────────────────────────────────────────────────────────────────────┘
+##############################################################################
+
+services:
+  # ── PostgreSQL ──────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: epibat
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis ───────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── Backend (Fastify) ──────────────────────────────────────────────────
+  # profile: fullstack → only started with --profile fullstack
+  # network_mode: host → container shares the HOST network stack.
+  #   ✅ Works on Linux (real LAN access, ARP table, ping, traceroute)
+  #   ❌ macOS / Windows: shares the VM network, NOT the real LAN.
+  #      Use "pnpm dev:server" natively instead for scanning to work.
+  server:
+    profiles: ["fullstack"]
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    restart: unless-stopped
+    network_mode: host
+    # Needed for raw-socket scanning (ping, ARP) inside the container
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    environment:
+      PORT: 4000
+      HOST: 0.0.0.0
+      NODE_ENV: production
+      DATABASE_URL: postgresql://postgres:postgres@127.0.0.1:5432/epibat?schema=public
+      REDIS_URL: redis://127.0.0.1:6379
+      JWT_SECRET: ${JWT_SECRET:-change-me-in-production-1234}
+      MAC_HASH_SALT: ${MAC_HASH_SALT:-epibat-gdpr-salt-change-me}
+      CORS_ORIGIN: ${CORS_ORIGIN:-http://localhost:3000}
+      MIST_API_TOKEN: ${MIST_API_TOKEN:-placeholder}
+      MIST_SITE_ID: ${MIST_SITE_ID:-placeholder}
+      MIST_ORG_ID: ${MIST_ORG_ID:-placeholder}
+      SCAN_ENABLED: ${SCAN_ENABLED:-true}
+      SCAN_INTERVAL: ${SCAN_INTERVAL:-30}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # ── Frontend (Next.js) ─────────────────────────────────────────────────
+  web:
+    profiles: ["fullstack"]
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        API_BACKEND_URL: http://host.docker.internal:4000
+    restart: unless-stopped
+    ports:
+      - "3001:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      NEXT_PUBLIC_WS_URL: http://localhost:4000
+    depends_on:
+      - server
+
+volumes:
+  pgdata:
+  redisdata:

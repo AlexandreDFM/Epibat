@@ -1,0 +1,152 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Building ──────────────────────────────────────────────────────────────
+
+model Building {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  address   String?
+  floors    Floor[]
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("buildings")
+}
+
+// ─── Floor ─────────────────────────────────────────────────────────────────
+
+model Floor {
+  id         String   @id @default(cuid())
+  buildingId String   @map("building_id")
+  level      Int
+  name       String
+  modelUrl   String?  @map("model_url")
+  textureUrl String?  @map("texture_url")
+  /// Mist map_id for this floor
+  mistMapId  String?  @unique @map("mist_map_id")
+  building   Building @relation(fields: [buildingId], references: [id], onDelete: Cascade)
+  rooms      Room[]
+  routerAssignments RouterAssignment[]
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@unique([buildingId, level])
+  @@map("floors")
+}
+
+// ─── Room ──────────────────────────────────────────────────────────────────
+
+model Room {
+  id       String   @id @default(cuid())
+  floorId  String   @map("floor_id")
+  name     String
+  /// JSON array of {x,y} polygon vertices
+  polygon  Json     @default("[]")
+  capacity Int      @default(30)
+  type     RoomType @default(classroom)
+  floor    Floor    @relation(fields: [floorId], references: [id], onDelete: Cascade)
+  routerAssignments RouterAssignment[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@unique([floorId, name])
+  @@map("rooms")
+}
+
+enum RoomType {
+  classroom
+  lab
+  meeting
+  open_space
+  hallway
+  restroom
+  other
+}
+
+// ─── User (opt-in tracking) ────────────────────────────────────────────────
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  displayName String   @map("display_name")
+  avatarUrl   String?  @map("avatar_url")
+  /// Whether the user consents to location tracking
+  optedIn     Boolean  @default(false) @map("opted_in")
+  /// Hashed MAC addresses linked to this user
+  devices     Device[]
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("users")
+}
+
+// ─── Device (anonymized) ───────────────────────────────────────────────────
+
+model Device {
+  id          String   @id @default(cuid())
+  /// SHA-256 hash of the MAC address
+  macHash     String   @unique @map("mac_hash")
+  userId      String?  @map("user_id")
+  user        User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  /// Last known position
+  lastX       Float?   @map("last_x")
+  lastY       Float?   @map("last_y")
+  lastFloorId String?  @map("last_floor_id")
+  lastRoomId  String?  @map("last_room_id")
+  lastSeen    DateTime? @map("last_seen")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("devices")
+}
+
+// ─── Calibration Config ────────────────────────────────────────────────────
+
+model CalibrationConfig {
+  id       String @id @default(cuid())
+  floorId  String @unique @map("floor_id")
+  /// JSON: { points: [...], scale: {...}, offset: {...} }
+  config   Json
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("calibration_configs")
+}
+
+// ─── Router Assignment (AP / switch / gateway → Room) ──────────────────────
+
+model RouterAssignment {
+  id        String   @id @default(cuid())
+  /// Unique key: MAC hash or IP of the router
+  macHash   String   @unique @map("mac_hash")
+  /// Original MAC address (for display)
+  mac       String?
+  /// IP address
+  ip        String?
+  /// Detected vendor name
+  vendor    String?
+  /// Detected device type label (e.g. "Routeur Cisco")
+  deviceType String? @map("device_type")
+  /// Hostname
+  hostname  String?
+  /// Assigned room (nullable = unassigned)
+  roomId    String?  @map("room_id")
+  room      Room?    @relation(fields: [roomId], references: [id], onDelete: SetNull)
+  /// Assigned floor
+  floorId   String?  @map("floor_id")
+  floor     Floor?   @relation(fields: [floorId], references: [id], onDelete: SetNull)
+  /// Custom label (admin can rename)
+  label     String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("router_assignments")
+}

@@ -1,6 +1,6 @@
 /**
  * File Name: wifi-info.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: WiFi network information retrieval (SSID, BSSID, signal).
  *

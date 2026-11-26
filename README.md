@@ -349,4 +349,4 @@ $$z_{scene} = y_{mist} \times scale_z + offset_z$$
 
 ## 📄 Licence
 
-Écrit par Alexandre Kévin DE FREITAS MARTINS pour Epitech. Les fichiers sources portent une notice de permission MIT au nom d'Epitech (© 2026 Epitech), accordée par l'auteur.
+Écrit par Alexandre DE FREITAS MARTINS pour Epitech. Distribué sous licence [MIT](LICENSE) (© 2026 Epitech).

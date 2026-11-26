@@ -1,6 +1,6 @@
 /**
  * File Name: layout.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Root layout - global providers, fonts, and metadata.
  *

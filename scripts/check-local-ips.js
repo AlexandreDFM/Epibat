@@ -1,6 +1,6 @@
 /**
  * File Name: check-local-ips.js
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Diagnostic script - lists local network interfaces and IP addresses.
  *

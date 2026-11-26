@@ -1,6 +1,6 @@
 /**
  * File Name: FloorPlan.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Three.js component - renders the floor plan texture (PDF/image).
  *

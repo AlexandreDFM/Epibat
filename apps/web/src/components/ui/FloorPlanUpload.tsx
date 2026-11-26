@@ -1,6 +1,6 @@
 /**
  * File Name: FloorPlanUpload.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: UI component - floor plan PDF/image upload with drag-and-drop.
  *

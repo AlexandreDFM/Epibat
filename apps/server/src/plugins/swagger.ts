@@ -1,6 +1,6 @@
 /**
  * File Name: swagger.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Swagger/OpenAPI 3.0 plugin - schemas registration and Swagger UI.
  *

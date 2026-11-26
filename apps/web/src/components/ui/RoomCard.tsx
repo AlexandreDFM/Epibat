@@ -1,6 +1,6 @@
 /**
  * File Name: RoomCard.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: UI component - room information card with occupancy data.
  *

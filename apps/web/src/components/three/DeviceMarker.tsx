@@ -1,6 +1,6 @@
 /**
  * File Name: DeviceMarker.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Three.js component - renders device position markers on the 3D scene.
  *

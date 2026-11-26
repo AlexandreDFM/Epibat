@@ -1,6 +1,6 @@
 /**
  * File Name: api.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: API client - typed fetch wrapper for backend REST endpoints.
  *

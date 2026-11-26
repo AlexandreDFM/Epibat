@@ -1,6 +1,6 @@
 /**
  * File Name: hash.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: MAC address hashing utilities (SHA-256 + salt for GDPR).
  *

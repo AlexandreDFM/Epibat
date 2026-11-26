@@ -1,6 +1,6 @@
 /**
  * File Name: pdfjs.d.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: TypeScript type declarations for PDF.js library.
  *

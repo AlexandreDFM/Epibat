@@ -1,6 +1,6 @@
 /**
  * File Name: page.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Dashboard page - 3D building visualization and real-time occupancy.
  *

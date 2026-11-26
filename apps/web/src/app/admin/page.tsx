@@ -1,6 +1,6 @@
 /**
  * File Name: page.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Admin panel page - room management, router assignment, and shape editor.
  *

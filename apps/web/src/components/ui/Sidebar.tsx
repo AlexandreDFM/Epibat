@@ -1,6 +1,6 @@
 /**
  * File Name: Sidebar.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: UI component - dashboard sidebar with room list and controls.
  *

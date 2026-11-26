@@ -1,6 +1,6 @@
 /**
  * File Name: ShapePalette.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Shape palette component - shape template selector for room composition.
  *

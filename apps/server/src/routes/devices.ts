@@ -1,6 +1,6 @@
 /**
  * File Name: devices.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Device routes - list, search, link, and count active devices.
  *

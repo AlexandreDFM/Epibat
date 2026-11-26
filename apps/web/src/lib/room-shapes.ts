@@ -1,6 +1,6 @@
 /**
  * File Name: room-shapes.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Room shape templates - 8 geometric primitives for room composition.
  *

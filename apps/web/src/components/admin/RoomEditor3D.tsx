@@ -1,6 +1,6 @@
 /**
  * File Name: RoomEditor3D.tsx
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: 3D room editor component - place, drag, resize, and rotate room shapes.
  *

@@ -1,6 +1,6 @@
 /**
  * File Name: floor-plans.ts
- * Author: Alexandre Kévin DE FREITAS MARTINS
+ * Author: Alexandre DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Floor plan routes - upload, delete, and retrieve PDF/image plans.
  *

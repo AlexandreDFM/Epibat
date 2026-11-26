@@ -7,6 +7,16 @@
 ![Fastify](https://img.shields.io/badge/Fastify-5-white)
 ![Three.js](https://img.shields.io/badge/Three.js-r171-green)
 
+## 📸 Captures d'écran
+
+Données de démonstration (appareils et occupation fictifs).
+
+| Dashboard 3D, rez-de-chaussée | Salle sélectionnée, 1er étage |
+|---|---|
+| ![Dashboard 3D avec l'occupation des salles du rez-de-chaussée](docs/screenshots/dashboard.png) | ![Salle 101 complète sélectionnée au 1er étage](docs/screenshots/dashboard-room.png) |
+
+<p align="center"><img src="docs/screenshots/admin-rooms.png" alt="Administration des salles d'un étage" width="70%"><br><sub>Administration des salles</sub></p>
+
 ---
 
 ## 📐 Architecture

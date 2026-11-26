@@ -156,7 +156,7 @@ export function registerDeviceRoutes(app: FastifyInstance): void {
           type: "object",
           properties: {
             success: { type: "boolean" },
-            data: { type: "array", items: { $ref: "DeviceCount" } },
+            data: { $ref: "DeviceCount" },
           },
         },
         500: { $ref: "ErrorResponse" },

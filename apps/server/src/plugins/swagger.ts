@@ -231,15 +231,8 @@ export async function registerSwagger(app: FastifyInstance): Promise<void> {
   app.addSchema({
     $id: "DeviceCount",
     type: "object",
-    properties: {
-      floorId: { type: "string" },
-      _count: {
-        type: "object",
-        properties: {
-          id: { type: "integer" },
-        },
-      },
-    },
+    description: "Number of tracked devices, keyed by floor ID",
+    additionalProperties: { type: "integer" },
   });
 
   app.addSchema({

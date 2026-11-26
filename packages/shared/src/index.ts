@@ -1,6 +1,6 @@
 /**
  * File Name: index.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Shared package entry point - re-exports types and constants.
  *

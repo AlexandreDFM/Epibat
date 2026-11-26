@@ -1,6 +1,6 @@
 /**
  * File Name: SocketProvider.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: React context provider for Socket.io client connection.
  *

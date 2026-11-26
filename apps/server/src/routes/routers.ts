@@ -1,6 +1,6 @@
 /**
  * File Name: routers.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Router/AP routes - list, assign, unassign, and sync access points.
  *

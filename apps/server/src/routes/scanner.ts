@@ -1,6 +1,6 @@
 /**
  * File Name: scanner.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Network scanner routes - status, manual scan, devices, and APs.
  *

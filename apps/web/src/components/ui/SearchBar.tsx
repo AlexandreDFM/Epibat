@@ -1,6 +1,6 @@
 /**
  * File Name: SearchBar.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: UI component - device/student search bar.
  *

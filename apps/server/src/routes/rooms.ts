@@ -1,6 +1,6 @@
 /**
  * File Name: rooms.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Room routes - CRUD operations and occupancy data.
  *

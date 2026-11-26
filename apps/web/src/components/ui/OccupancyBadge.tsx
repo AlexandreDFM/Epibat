@@ -1,6 +1,6 @@
 /**
  * File Name: OccupancyBadge.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: UI component - color-coded occupancy percentage badge.
  *

@@ -1,6 +1,6 @@
 /**
  * File Name: page.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Landing page - redirects to dashboard.
  *

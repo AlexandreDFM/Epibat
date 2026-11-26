@@ -1,6 +1,6 @@
 /**
  * File Name: useRoomOccupancy.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: React hook - subscribes to real-time room occupancy updates via Socket.io.
  *

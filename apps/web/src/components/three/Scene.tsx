@@ -1,6 +1,6 @@
 /**
  * File Name: Scene.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Three.js scene component - camera, lights, controls, and child objects.
  *

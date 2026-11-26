@@ -1,6 +1,6 @@
 /**
  * File Name: AccessPointMarker.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Three.js component - renders access point markers on the 3D scene.
  *

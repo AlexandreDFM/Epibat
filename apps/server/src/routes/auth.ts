@@ -1,6 +1,6 @@
 /**
  * File Name: auth.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Authentication routes - register, opt-out, and user profile (JWT).
  *

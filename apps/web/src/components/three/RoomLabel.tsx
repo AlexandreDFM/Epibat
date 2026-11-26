@@ -1,6 +1,6 @@
 /**
  * File Name: RoomLabel.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Three.js component - renders room name labels on the 3D scene.
  *

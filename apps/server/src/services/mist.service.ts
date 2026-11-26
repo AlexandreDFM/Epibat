@@ -1,6 +1,6 @@
 /**
  * File Name: mist.service.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Mist AI service - WebSocket client for vBLE/WiFi positioning.
  *

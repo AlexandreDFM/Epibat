@@ -1,6 +1,6 @@
 /**
  * File Name: coordinates.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Client-side coordinate transformation utilities.
  *

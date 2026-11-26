@@ -1,6 +1,6 @@
 /**
  * File Name: device.service.ts
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: Device service - manages device state, linking, and persistence.
  *

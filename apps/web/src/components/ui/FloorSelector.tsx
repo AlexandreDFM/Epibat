@@ -1,6 +1,6 @@
 /**
  * File Name: FloorSelector.tsx
- * Author: Alexandre DE FREITAS MARTINS
+ * Author: Alexandre Kévin DE FREITAS MARTINS
  * Creation Date: 2026
  * Description: UI component - floor/building selection dropdown.
  *
